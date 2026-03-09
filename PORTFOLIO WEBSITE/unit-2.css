@@ -1,0 +1,43 @@
+/* --- HIDE THE MAIN BROWSER SCROLLBAR --- */
+html, body {
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+}
+
+html::-webkit-scrollbar, 
+body::-webkit-scrollbar {
+    display: none; 
+}
+
+/* Base page styling matching the minimalist reference */
+body {
+    background-color: #ffffff; /* Crisp white background */
+    color: #222;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    /* CRITICAL FIX: Increased side padding to 150px to protect the back button */
+    padding: 100px 150px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- BACK BUTTON STYLING --- */
+.back-btn {
+    position: fixed;
+    top: 40px;
+    left: 40px;
+    text-decoration: none;
+    color: #222;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    transition: opacity 0.3s ease;
+    z-index: 100;
+    /* Added a white background to the button just in case of extreme window resizing */
+    background-color: #ffffff;
+    padding: 5px 10px;
+}
+
+.back-btn:hover {
+    opacity: 0.4; /* Soft fade instead of a harsh background change */
+}
